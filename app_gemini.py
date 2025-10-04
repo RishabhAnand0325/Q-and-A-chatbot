@@ -17,7 +17,7 @@ def ask():
     if not model:
         return jsonify({"error": "AI model not configured on server"}), 500
 
-    # Get the question from the POST request's JSON body
+    
     data = request.get_json()
     if not data or 'question' not in data:
         return jsonify({"error": "No question provided"}), 400
@@ -31,4 +31,5 @@ def ask():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
+
     app.run(port=5000, debug=True)
